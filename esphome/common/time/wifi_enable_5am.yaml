@@ -1,0 +1,9 @@
+seconds: 0
+minutes: 0
+hours: 6
+then:
+- wifi.enable
+- delay: 30s
+- lambda: |-
+    ESP_LOGI("Time", "6am trigger");
+    ESP_LOGD("Time", "Wifi turned ON");

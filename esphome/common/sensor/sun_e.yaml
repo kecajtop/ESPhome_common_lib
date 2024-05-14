@@ -1,0 +1,4 @@
+    platform: sun
+    name: ${friendly_name} Sun Elevation
+    type: elevation
+    update_interval: 60s

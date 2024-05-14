@@ -1,0 +1,5 @@
+  - platform: template
+    name: ${friendly_name} WIFI Switch
+    id: wifi_switch
+    turn_on_action:
+      - wifi.disable

@@ -1,0 +1,13 @@
+seconds: 0
+minutes: 0
+hours: 0
+then:
+  if:
+    condition:
+      time.has_time:
+    then:
+    - lambda: |-
+        ESP_LOGI("Time", "12am trigger");
+        ESP_LOGD("Time", "Wifi turned OFF");
+    - delay: 30s
+    - wifi.disable

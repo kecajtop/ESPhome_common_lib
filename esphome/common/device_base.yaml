@@ -1,0 +1,19 @@
+esphome:
+  name: $devicename
+
+web_server:
+  port: 80
+
+# Enable logging
+logger:
+  level: ${log_level}
+  baud_rate: 0
+
+ota:
+  password: $ota
+
+api:
+  encryption:
+    key: $key
+  reboot_timeout: 172800s
+

@@ -1,0 +1,6 @@
+    platform: template
+    name: ${friendly_name} Clock
+    update_interval: 1s
+    icon: mdi:clock-digital
+    lambda: |-
+        return { (String(id(homeassistant_time).now().hour) +":" + String(id(homeassistant_time).now().minute) +":"+ String(id(homeassistant_time).now().second)).c_str() };

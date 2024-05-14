@@ -1,0 +1,35 @@
+  time:
+    - <<: !include ./../common/time/sntp_time.yaml
+      on_time:
+      - <<: !include ./../common/time/wifi_enable_5am.yaml 
+      - <<: !include ./../common/time/wifi_disable_12am.yaml 
+  
+  sensor:
+    - <<: !include ./../common/sensor/wifi_signal.yaml
+    - <<: !include ./../common/sensor/uptime.yaml
+  #  - <<: !include ./../common/sensor/esp32_temp.yaml
+  
+  binary_sensor:
+    - <<: !include ./../common/binary_sensor/ha_status.yaml
+  
+  switch:
+    - <<: !include ./../common/switch/restart.yaml
+    - <<: !include ./../common/switch/wifi_disable.yaml
+  
+  text_sensor:
+    - <<: !include ./../common/text_sensor/esphome_version.yaml
+    - <<: !include ./../common/text_sensor/wifi_info.yaml
+  interval:
+    - interval: 3600s
+      then:
+      - lambda: |-
+          if (!id(wifi_id).is_connected()) 
+          {
+            ESP_LOGI("main config" , "Wifi disconneted");
+            WiFi.disconnect();
+            ESP_LOGI("main config", "reconnecting");
+          }
+          else
+          {
+            ESP_LOGI("main config","Wifi connected");
+          }

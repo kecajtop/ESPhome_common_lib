@@ -1,0 +1,4 @@
+    platform: uptime
+    name: ${friendly_name} ESP Uptime Sensor
+    id: uptime_sensor
+    update_interval: 60s

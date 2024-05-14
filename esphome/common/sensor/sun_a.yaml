@@ -1,0 +1,4 @@
+platform: sun
+name: ${friendly_name} Sun Azimuth
+type: azimuth
+update_interval: 60s

@@ -1,0 +1,2 @@
+sensor:
+    - <<: !include ./../common/sensor/esp32_temp.yaml

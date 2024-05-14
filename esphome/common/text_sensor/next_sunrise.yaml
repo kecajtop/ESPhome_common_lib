@@ -1,0 +1,4 @@
+    platform: sun
+    name: ${friendly_name} Sun Next Sunrise
+    type: sunrise
+    update_interval: 60s

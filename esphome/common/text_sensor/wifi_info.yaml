@@ -1,0 +1,13 @@
+    platform: wifi_info
+    ip_address:
+      name: ${upper_devicename} ESP IP
+      icon: mdi:ip-network
+    ssid:
+      name: ${upper_devicename} ESP SSID
+      icon: mdi:wifi
+    bssid:
+      name: ${upper_devicename} ESP BSSID
+      icon: mdi:wifi
+    mac_address:
+      name: ${upper_devicename} ESP MAC
+      icon: mdi:identifiery
