@@ -11,7 +11,7 @@ wifi:
     password: $wifi_password_ha
   reboot_timeout: 21600s #172800s
   use_address: $IP
-  id: wifi_id
+  id: wifi_component
     # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: ${friendly_name} Fallback"

@@ -1,0 +1,2 @@
+  - platform: safe_mode
+    name: "${friendly_name} Restart (Safe Mode)"

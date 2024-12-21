@@ -2,18 +2,37 @@ esphome:
   name: $devicename
 
 web_server:
-  port: 80
+  version: 3
+  sorting_groups:
+    - id: sorting_group_time_settings
+      name: "Time Settings"
+      sorting_weight: 10
+    - id: sorting_group_number_settings
+      name: "Number settings"
+      sorting_weight: 20
 
 # Enable logging
 logger:
   level: ${log_level}
   baud_rate: 0
-
+  logs:
+    sensor: WARN
+    resistance: WARN
+    text_sensor: WARN
+    ntc: WARN
 ota:
-  password: $ota
+  - platform: esphome
+    password: $ota
 
 api:
   encryption:
     key: $key
   reboot_timeout: 172800s
 
+#external_components:
+#  - source: github://TheStaticTurtle/esphome_syslog
+#    components: [syslog]
+
+#syslog:
+#    ip_address: "192.168.2.2"
+#    port: 514

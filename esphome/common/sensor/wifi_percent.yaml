@@ -1,0 +1,8 @@
+    platform: wifi_signal # Reports the WiFi signal strength in %
+    name: ${friendly_name} WiFi Signal Percent
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+    unit_of_measurement: "Signal %"
+    id: wifi_signal_pct
+    update_interval: 60s
+    entity_category: "diagnostic"
